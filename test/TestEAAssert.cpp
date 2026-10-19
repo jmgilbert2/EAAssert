@@ -47,7 +47,7 @@ static void TestCondition(bool condition, bool always)
 	{
 		if (!condition)
 		{
-			EA::EAMain::Report("Test failed\n");
+			EA::EAMain::Report(EA_CHAR8("Test failed\n"));
 			EA_DEBUG_BREAK();
 		}
 
@@ -63,7 +63,7 @@ static void TestCondition(bool condition, bool always)
 #else
 	if (condition)
 	{
-		EA::EAMain::Report("Test failed\n");
+		EA::EAMain::Report(EA_CHAR8("Test failed\n"));
 		EA_DEBUG_BREAK();
 	}
 #endif
@@ -181,7 +181,7 @@ int EAMain(int argc, char**)
 	Expect("EA_FAIL", __FILE__, __LINE__ + 1, mainName, testMsg);
 	EA_FAIL_FORMATTED(("%s", testMsg));
 
-	EA::EAMain::Report("Test complete - all tests passed.\n");
+	EA::EAMain::Report(EA_CHAR8("Test complete - all tests passed.\n"));
 
 	return 0;
 }
